@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"goproxy/internal/commandline/base"
-	"goproxy/internal/commandline/servecmd"
+	"goproxy/internal/base"
+	"goproxy/internal/servecmd"
 	"os"
 
 	"github.com/namsral/flag"
@@ -48,14 +48,6 @@ func main() {
 	fmt.Printf("Unknown command %s\n", args[0])
 	printUsage()
 	os.Exit(-2)
-
-	/*	dataDir := flag.String("dir", "repo", "Directory containing the files blah blah")
-		httpAddr := flag.String("http", ":8080", "address to bind the HTTP server to")
-		tls := flag.Bool("tls", false, "Whether to use TLS")
-		tlsCert := flag.String("cert", "", "TLS certificate file")
-		tlsKey := flag.String("key", "", "TLS key file")
-		flag.Parse()
-		panic(proxy.Run(*dataDir, *httpAddr, proxy.TLS(*tls, *tlsCert, *tlsKey)))*/
 }
 
 func printUsage() {
@@ -68,5 +60,5 @@ Available commands:
 	for _, cmd := range base.Commands {
 		fmt.Printf("\t%-15s %s\n", cmd.Name(), cmd.Short)
 	}
-	fmt.Printf("You can run goproxy [command] -h for info on each command.\n\n")
+	fmt.Printf("\nYou can run goproxy [command] -h for info on each command.\n\n")
 }

@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"goproxy/internal/commandline/base"
+	"goproxy/internal/base"
 )
 
 var (
